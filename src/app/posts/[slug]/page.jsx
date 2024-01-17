@@ -1,3 +1,4 @@
+import { CardPost } from "@/components/CardPost"
 import { logger } from "@/logger"
 
 async function getPostBy(slug) {
@@ -23,6 +24,8 @@ export default async function PostPage ({ params }) {
 
     const post = await getPostBy(params.slug)
     return (
-        <h1>{post.title}</h1>
+        <div>
+            <CardPost post={post} highlight/>
+        </div>
     )    
 }
