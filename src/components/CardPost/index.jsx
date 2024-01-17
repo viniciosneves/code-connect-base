@@ -9,8 +9,8 @@ export const CardPost = ({ post, highlight }) => {
         <article className={styles.card} style={{ width: highlight ? 996 : 486}}>
             <Link href={`/posts/${post.slug}`}>
                 <header className={styles.header}>
-                    <figure>
-                        <Image src={post.cover} width={highlight ? 960 : 438} height={highlight ? 320 : 192} alt="Capa do artigo" />
+                    <figure style={{ height: highlight ? 320 : 192}}>
+                        <Image src={post.cover} fill alt="Capa do artigo" />
                     </figure>
                 </header>
                 <section className={styles.body}>
