@@ -1,5 +1,7 @@
 import { CardPost } from "@/components/CardPost"
 
+import styles from './page.module.css'
+
 export default function Home() {
   const post = {
     "id": 2,
@@ -17,9 +19,15 @@ export default function Home() {
 }
   return (
     <main>
+      <div className={styles.main}>
+        <CardPost post={post} />
+        <CardPost post={post} />
+        <CardPost post={post} />
 
-      <CardPost post={post} />
-
+        <CardPost post={post} />
+        <CardPost post={post} />
+        <CardPost post={post} />
+      </div>
     </main>
   )
 }
