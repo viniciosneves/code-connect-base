@@ -4,3 +4,9 @@
     flex-wrap: wrap;
     width: 996px;
 }
+
+.navigation {
+    margin-top: 56px;
+    margin-bottom: 0;
+    text-align: center;
+}
