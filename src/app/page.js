@@ -3,8 +3,8 @@ import { CardPost } from "@/components/CardPost"
 import styles from './page.module.css'
 import { logger } from "@/logger"
 
-async function getAllPosts() {
-  const res = await fetch('http://localhost:3042/posts')
+async function getAllPosts(page = 1) {
+  const res = await fetch(`http://localhost:3042/posts?_page=${page}&_per_page=6`)
 
   if (!res.ok) {
     logger.error('Failed to fetch all posts.', {
@@ -18,7 +18,7 @@ async function getAllPosts() {
  
 
 export default async function Home() {
-  const posts = await getAllPosts()
+  const { data: posts } = await getAllPosts()
 
   return (
     <main>
