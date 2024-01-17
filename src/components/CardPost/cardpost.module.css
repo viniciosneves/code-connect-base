@@ -4,6 +4,11 @@
     background: #171D1F;
 }
 
+.card a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .header {
     border-radius: 8px 8px 0px 0px;
     background: #888;
