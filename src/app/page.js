@@ -2,31 +2,24 @@ import { CardPost } from "@/components/CardPost"
 
 import styles from './page.module.css'
 
-export default function Home() {
-  const post = {
-    "id": 2,
-    "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/css-grid-na-pratica.png",
-    "title": "CSS Grid na Prática",
-    "slug": "css-grid-na-pratica",
-    "body": "Aprenda a criar layouts responsivos com CSS Grid. Este post aborda desde a definição de grid até a criação de layouts complexos de forma simples e eficaz.",
-    "markdown": "```css\n.grid-container {\n  display: grid;\n  grid-template-columns: auto auto auto;\n}\n```",
-    "author": {
-        "id": 101,
-        "name": "Ana Beatriz",
-        "username": "anabeatriz_dev",
-        "avatar": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/authors/anabeatriz_dev.png"
-    }
+async function getAllPosts() {
+  const res = await fetch('http://localhost:3042/posts')
+
+  if (!res.ok) {
+    console.log('Alguma coisa deu errado')
+  }
+ 
+  return res.json()
 }
+ 
+
+export default async function Home() {
+  const posts = await getAllPosts()
+
   return (
     <main>
       <div className={styles.main}>
-        <CardPost post={post} />
-        <CardPost post={post} />
-        <CardPost post={post} />
-
-        <CardPost post={post} />
-        <CardPost post={post} />
-        <CardPost post={post} />
+        {posts.map(post => <CardPost post={post} />)}
       </div>
     </main>
   )
