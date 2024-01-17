@@ -18,9 +18,11 @@ async function getAllPosts(page = 1) {
 }
  
 
-export default async function Home() {
+export default async function Home({ searchParams }) {
+  
+  const currentPage = searchParams?.page || 1
 
-  const { data: posts, next, prev } = await getAllPosts()
+  const { data: posts, next, prev } = await getAllPosts(currentPage)
 
   return (
     <main>
@@ -28,7 +30,7 @@ export default async function Home() {
         {posts.map(post => <CardPost key={post.id} post={post} />)}
       </div>
       {prev && <Link href={`?page=${prev}`}>
-        próxima anterior
+        página anterior
       </Link>}
       {next && <Link href={`?page=${next}`}>
         próxima página
