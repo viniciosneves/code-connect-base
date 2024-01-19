@@ -6,10 +6,10 @@ import Link from "next/link"
 
 export const CardPost = ({ post, highlight }) => {
     return (
-        <article className={styles.card} style={{ width: highlight ? 996 : 486}}>
+        <article className={styles.card} style={{ width: highlight ? 993 : 486}}>
             <Link href={`/posts/${post.slug}`}>
                 <header className={styles.header}>
-                    <figure style={{ height: highlight ? 320 : 192}}>
+                    <figure style={{ height: highlight ? 300 : 133}}>
                         <Image src={post.cover} fill alt="Capa do artigo" />
                     </figure>
                 </header>

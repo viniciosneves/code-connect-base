@@ -5,6 +5,9 @@
     box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.24);
     max-height: 250px;
     overflow-y: scroll;
+    color: #BCBCBC;
+    line-height: 150%;
+    font-size: 15px;
 }
 
 .subtitle {
@@ -12,5 +15,5 @@
     font-size: 22px;
     font-style: normal;
     font-weight: 600;
-    line-height: 150%; /* 33px */
+    line-height: 150%;
 }
